@@ -89,10 +89,11 @@ async function consume(conn, queue) {
           KETERANGAN: dataJson.KET,
           DATE_TIME: new Date(Date.now()),
         }
+        console.log(responseData)
 
         saveMessageToJson(responseData)
       }, { noAck: false })
-      // ch.close()
+      ch.close()
     })
   } catch (error) {
     console.log(error)
