@@ -14,7 +14,7 @@ const { Server } = require('socket.io')
 
 const corsOptions = {
   origin: ["http://localhost:3001/", "https://smart-agriculture-indol.vercel.app/"],
-  methods: ["GET", "POST"],
+  // methods: ["GET", "POST"],
   optionsSuccessStatus: 200
 }
 
