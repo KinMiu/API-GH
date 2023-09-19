@@ -12,14 +12,19 @@ const cors = require('cors');
 const { router: routerWorker } = require('./controller/app.js');
 const { Server } = require('socket.io')
 
-app.use(cors())
+const corsOptions = {
+  origin: ["http://localhost:3001/", "https://smart-agriculture-indol.vercel.app/"],
+  methods: ["GET", "POST"]
+}
+
+app.use(cors(corsOptions))
 app.use(express.json({ extended: true, limit: '20mb' }))
 app.use(express.urlencoded({ extended: true, limit: '20mb' }))
 app.use(express.static('public'))
 
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: ["http://localhost:3001/", "https://smart-agriculture-indol.vercel.app/"],
     methods: ["GET", "POST"]
   }
 })
