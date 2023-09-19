@@ -6,16 +6,17 @@ const fs = require('fs')
 reconnect()
 let response;
 
+// const option = {
+//   protocol: "amqp",
+//   hostname: "rmq1.pptik.id",
+//   port: "5672",
+//   username: "shadoofpertanian",
+//   password: "TaniBertani19",
+//   vhost: "/shadoofpertanian",
+// }
 
 async function koneksiRmq() {
-  require("amqplib/callback_api").connect({
-    protocol: "amqp",
-    hostname: "rmq1.pptik.id",
-    port: "5672",
-    username: "shadoofpertanian",
-    password: "TaniBertani19",
-    vhost: "/shadoofpertanian",
-  },
+  require("amqplib/callback_api").connect('amqps://ubzpxram:oRtyxNbZq-D-Pi06v5kxR6Fm5uHJ3_fd@beaver.rmq.cloudamqp.com/ubzpxram',
     async function (err, conn) {
       try {
         if (err) {
