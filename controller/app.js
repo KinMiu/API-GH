@@ -100,7 +100,7 @@ async function consume(conn, queue) {
 
         saveMessageToJson(responseData)
       }, { noAck: false })
-      ch.close()
+      // ch.close()
     })
   } catch (error) {
     console.log(error)
